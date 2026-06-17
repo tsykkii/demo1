@@ -91,9 +91,9 @@ CREATE TABLE order_items (
 ## МОДУЛЬ 2
 ### Заполнение этих таблиц
 
-```
+
 CUSTOMERS. Импортировать данные из файла "Заказчики.json":
-```
+
 
 ```sql
 INSERT INTO customers VALUES
