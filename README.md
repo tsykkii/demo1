@@ -91,9 +91,9 @@ CREATE TABLE order_items (
 ## МОДУЛЬ 2
 ### Заполнение этих таблиц
 
-
+```
 CUSTOMERS. Импортировать данные из файла "Заказчики.json":
-
+```
 
 ```sql
 INSERT INTO customers VALUES
@@ -148,7 +148,7 @@ VALUES
 ```
 
 ```
-Создать заказ Из "Заказ покупателя":
+Создать заказ (orders) Из "Заказ покупателя":
 ```
 
 ```sql
@@ -157,7 +157,7 @@ VALUES ('2025-06-06','000000010');
 ```
 
 ```
-Заполнить состав заказа:
+Заполнить состав заказа (order_items):
 ```
 
 ```sql
@@ -166,6 +166,21 @@ VALUES
 (1,1,12),
 (1,2,9),
 (1,3,10);
+```
+
+
+## МОДУЛЬ 3
+### Полная себестоимость заказа
+
+```
+order_items → specifications → materials
+```
+
+```sql
+SELECT *
+FROM order_items oi
+JOIN specifications s
+ON oi.product_id = s.product_id;
 ```
 
 ## Миграции
